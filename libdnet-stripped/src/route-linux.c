@@ -30,6 +30,11 @@
 
 #include "dnet.h"
 
+#ifdef __ANDROID__
+#undef s6_addr32
+#define s6_addr32 ((uint32_t *)s6_addr)
+#endif
+
 #define ADDR_ISHOST(a)	(((a)->addr_type == ADDR_TYPE_IP &&	\
 			  (a)->addr_bits == IP_ADDR_BITS) ||	\
 			 ((a)->addr_type == ADDR_TYPE_IP6 &&	\
@@ -146,7 +151,7 @@ route6_add(route_t *r, const struct route_entry *entry, int intf_index)
 
 	memcpy(&rt.rtmsg_dst, &dst.addr_ip6, sizeof(rt.rtmsg_dst));
 
-	if (!IN6_IS_ADDR_UNSPECIFIED(&entry->route_gw.addr_ip6)) {
+	if (memcmp(&entry->route_gw.addr_ip6, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 16) != 0) {
 		rt.rtmsg_flags |= RTF_GATEWAY;
 		memcpy(&rt.rtmsg_gateway, &entry->route_gw.addr_ip6,
 				sizeof(rt.rtmsg_gateway));

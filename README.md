@@ -1,43 +1,89 @@
-Nmap [![Build Status](https://travis-ci.org/nmap/nmap.svg?branch=master)](https://travis-ci.org/nmap/nmap) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/nmap/nmap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nmap/nmap/context:cpp) [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/nmap/nmap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nmap/nmap/context:python) [![Total alerts](https://img.shields.io/lgtm/alerts/g/nmap/nmap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nmap/nmap/alerts/)
-====
+# Nmap for Android (Fork)
 
-Nmap is released under a custom license, which is based on (but not compatible
-with) GPLv2. The Nmap license allows free usage by end users, and we also offer
-a commercial license for companies that wish to redistribute Nmap technology
-with their products. See [Nmap Copyright and Licensing](https://nmap.org/book/man-legal.html)
-for full details.
+This is a fork of [Nmap](https://nmap.org/), cross-compiled and modified to run on Android devices (AArch64, Android API 24).
 
-The latest version of this software as well as binary installers for Windows,
-macOS, and Linux (RPM) are available from
-[Nmap.org](https://nmap.org/download.html)
+---
 
-Full documentation is also available
-[on the Nmap.org website](https://nmap.org/docs.html).
+## About
 
-Questions and suggestions may be sent to
-[the Nmap-dev mailing list](https://nmap.org/mailman/listinfo/dev).
+Nmap (“Network Mapper”) is a powerful open-source tool for network discovery and security auditing. This fork adapts Nmap to Android using the official Android NDK toolchain.
 
-Installing
-----------
-Ideally, you should be able to just type:
+---
 
-    ./configure
-    make
-    make install
+## Modifications
 
-For far more in-depth compilation, installation, and removal notes, read the
-[Nmap Install Guide](https://nmap.org/book/install.html) on Nmap.org.
+- Cross-compiled with Android NDK r29 for ARM64 (aarch64).  
+- Fixed compatibility issues in `libdnet` for Android.  
+- Disabled OpenSSL and LibSSH2 support due to build environment constraints.  
+- Minor Android-specific tweaks to make it run smoothly on Android devices.
 
-Using Nmap
-----------
-Nmap has a lot of features, but getting started is as easy as running `nmap
-scanme.nmap.org`. Running `nmap` without any parameters will give a helpful
-list of the most common options, which are discussed in depth in [the man
-page](https://nmap.org/book/man.html). Users who prefer a graphical interface
-can use the included [Zenmap front-end](https://nmap.org/zenmap/).
+---
 
-Contributing
-------------
-Information about filing bug reports and contributing to the Nmap project can
-be found in the [HACKING](HACKING) and [CONTRIBUTING.md](CONTRIBUTING.md)
-files.
+## Build Instructions
+
+### Prerequisites
+
+- Linux host system  
+- Android NDK r29 (or compatible version) installed  
+- `make`, `gcc`, `clang`, `autoconf`, `automake`, `libtool` installed  
+- `pkg-config` installed  
+- `python3` (optional, for some scripts)
+
+### Steps
+
+```bash
+# Clone the repo
+git clone https://github.com/aeticusdev/nmap-android.git
+cd nmap-android
+
+# Set your NDK path (adjust if needed)
+export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk/29.0.13599879
+
+# Export cross-compile tools for aarch64 Android 24
+export PATH=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+export CC=aarch64-linux-android24-clang
+export CXX=aarch64-linux-android24-clang++
+export AR=aarch64-linux-android24-ar
+export LD=aarch64-linux-android24-ld
+export RANLIB=aarch64-linux-android24-ranlib
+export STRIP=aarch64-linux-android24-strip
+
+# Configure build for Android with minimal features (no OpenSSL, no LibSSH2)
+./configure --host=aarch64-linux-android --without-ssl --without-libssh2 --disable-zenmap --disable-nmap-update
+
+# Build
+make -j$(nproc)
+
+# After build, nmap binary will be at ./nmap
+```
+
+---
+
+## Usage
+
+Push the `nmap` binary to your Android device and run it directly:
+
+```bash
+adb push nmap /data/local/tmp/
+adb shell
+cd /data/local/tmp
+chmod +x nmap
+./nmap -v
+```
+
+---
+
+## License
+
+This project is based on Nmap, licensed under the **Nmap Public Source License (NPSL)**.
+
+You **must keep all original copyright notices and license info intact**.
+
+See the official Nmap legal page for details:  
+https://nmap.org/book/man-legal.html
+
+---
+
+## Disclaimer
+
+Use at your own risk. No warranties or guarantees.
