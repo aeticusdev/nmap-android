@@ -1,0 +1,323 @@
+checking whether NLS is requested... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... aarch64-unknown-linux-android
+checking for aarch64-linux-android-gcc... aarch64-linux-android24-clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android24-clang accepts -g... yes
+checking for aarch64-linux-android24-clang option to enable C11 features... none needed
+checking for inline... inline
+checking for aarch64-linux-android-gcc... (cached) aarch64-linux-android24-clang
+checking whether the compiler supports GNU C... (cached) yes
+checking whether aarch64-linux-android24-clang accepts -g... (cached) yes
+checking for aarch64-linux-android24-clang option to enable C11 features... (cached) none needed
+checking whether the compiler supports GNU C++... yes
+checking whether aarch64-linux-android24-clang++ accepts -g... yes
+checking for aarch64-linux-android24-clang++ option to enable C++11 features... none needed
+checking for aarch64-linux-android-ranlib... aarch64-linux-android24-ranlib
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for gawk... gawk
+checking for __func__... yes
+checking for aarch64-linux-android-strip... no
+checking for strip... /usr/bin/strip
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for pwd.h... yes
+checking for termios.h... yes
+checking for sys/sockio.h... no
+checking for stdint.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for fcntl.h... yes
+checking for linux/rtnetlink.h... yes
+checking for sys/socket.h... yes
+checking for net/if.h... yes
+checking for library containing setsockopt... none required
+checking for library containing gethostbyname... none required
+checking if AF_INET6 IPPROTO_RAW sockets include the packet header... yes
+checking for a Python interpreter with version >= 3... python3
+checking for python3... /home/mostafizur/.pyenv/shims/python3
+checking for python3 version... 3.1
+checking for python3 platform... linux
+checking for python3 script directory... ${prefix}/lib/python3.11/site-packages
+checking for python3 extension module directory... ${exec_prefix}/lib/python3.11/site-packages
+checking for python module setuptools... yes
+checking for python module build... no
+checking for library containing dlopen... none required
+checking for openssl/ssl.h... no
+checking for pcap.h... no
+checking for pcre2.h... no
+checking for pcre2/pcre2.h... no
+checking for zlib.h... yes
+checking for gzread in -lz... yes
+checking for lua5.4/lua.h... no
+checking for lua/5.4/lua.h... no
+checking for lua.h... no
+checking for lua/lua.h... no
+checking for library containing lua_isyieldable... no
+checking for lua version == 504... checking how to run the C preprocessor... aarch64-linux-android24-clang -E
+no
+checking for linear.h... no
+no
+checking whether byte ordering is bigendian... no
+checking if struct in_addr is a wacky huge structure (some Sun boxes)... no
+checking if struct icmp exists... yes
+checking if struct ip exists... yes
+checking if struct ip has ip_sum member... yes
+checking for strerror... yes
+checking for type of 6th argument to recvfrom()... socklen_t
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libnetutil/Makefile
+config.status: creating nmap_config.h
+config.status: nmap_config.h is unchanged
+=== configuring in nping (/home/mostafizur/nmap-android/nping)
+configure: running /bin/sh ./configure --disable-option-checking '--prefix=/usr/local'  '--host=aarch64-linux-android' '--disable-zenmap' '--disable-nmap-update' 'host_alias=aarch64-linux-android' 'CC=aarch64-linux-android24-clang' 'CXX=aarch64-linux-android24-clang++' --cache-file=/dev/null --srcdir=.
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... aarch64-unknown-linux-android
+checking for aarch64-linux-android-gcc... aarch64-linux-android24-clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android24-clang accepts -g... yes
+checking for aarch64-linux-android24-clang option to enable C11 features... none needed
+checking for inline... inline
+checking for aarch64-linux-android-gcc... (cached) aarch64-linux-android24-clang
+checking whether the compiler supports GNU C... (cached) yes
+checking whether aarch64-linux-android24-clang accepts -g... (cached) yes
+checking for aarch64-linux-android24-clang option to enable C11 features... (cached) none needed
+checking whether the compiler supports GNU C++... yes
+checking whether aarch64-linux-android24-clang++ accepts -g... yes
+checking for aarch64-linux-android24-clang++ option to enable C++11 features... none needed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether the compiler is gcc 4 or greater... yes
+checking for __func__... yes
+checking for aarch64-linux-android-strip... /usr/bin/strip
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for pwd.h... yes
+checking for termios.h... yes
+checking for sys/sockio.h... no
+checking for library containing setsockopt... none required
+checking for library containing gethostbyname... none required
+checking for library containing dlopen... none required
+checking for library containing nl_handle_alloc... no
+checking for openssl/ssl.h... no
+checking for pcap.h... no
+checking if sockaddr{} has sa_len member... no
+checking if sockaddr_in{} has sin_len member... no
+checking if sockaddr_in6{} has sin6_len member... no
+checking whether byte ordering is bigendian... no
+checking if struct in_addr is a wacky huge structure (some Sun boxes)... no
+checking if struct ip has ip_sum member... yes
+checking if function signal is accessible... no
+checking for strerror... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating nping_config.h
+config.status: nping_config.h is unchanged
+                        o         
+                         o        
+                          o       
+                   o       o      
+                    o       o     
+                     o       o    
+               o      o       o   
+                o      o      o   
+    888b    888  o     o      o   
+    8888b   888  o     o      o   
+    88888b  888  o     o      o   
+    888Y88b 888               o   
+    888 Y88b888               o   
+    888  Y88888                   
+    888   Y8888                   
+    888    Y888                   
+                                  
+    --[NPING]--                   
+Configuration complete.  Type make (or gmake on some *BSD machines) to compile.
+=== configuring in libpcap (/home/mostafizur/nmap-android/libpcap)
+configure: running /bin/sh ./configure --disable-option-checking '--prefix=/usr/local'  '--host=aarch64-linux-android' '--disable-zenmap' '--disable-nmap-update' 'host_alias=aarch64-linux-android' 'CC=aarch64-linux-android24-clang' 'CXX=aarch64-linux-android24-clang++' --cache-file=/dev/null --srcdir=.
+checking build system type... x86_64-pc-linux-android
+checking host system type... aarch64-unknown-linux-android
+checking target system type... aarch64-unknown-linux-android
+checking for aarch64-linux-android-gcc... aarch64-linux-android24-clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android24-clang accepts -g... yes
+checking for aarch64-linux-android24-clang option to enable C11 features... none needed
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking size of void *... 8
+checking size of time_t... 8
+checking whether the compiler supports the -fvisibility=hidden option... yes
+checking for inline... inline
+checking for __atomic_load_n... yes
+checking for __atomic_store_n... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for sys/ioccom.h... no
+checking for sys/sockio.h... no
+checking for netpacket/packet.h... yes
+checking for ANSI ioctl definitions... yes
+checking for strerror_r... yes
+checking whether strerror_r is GNU-style... yes
+checking for vsyslog... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for strtok_r... yes
+checking for ffs... yes
+checking for aarch64-linux-android24-clang options needed to detect all undeclared functions... none needed
+checking whether ffs is declared... yes
+checking for getaddrinfo... yes
+checking for library containing putmsg... no
+checking whether getnetbyname_r is declared... no
+checking whether getprotobyname_r is declared... no
+checking for ether_hostton... no
+checking for pthread.h... yes
+checking for pthread_create... yes
+checking whether to enable the instrument functions code... no
+checking if --disable-protochain option is specified... enabled
+checking for net/bpf.h... no
+checking for net/pfilt.h... no
+checking for net/enet.h... no
+checking for net/nit.h... no
+checking for sys/net/nit.h... no
+checking for linux/socket.h... yes
+checking for net/raw.h... no
+checking for sys/dlpi.h... no
+checking for config/HaikuConfig.h... no
+checking packet capture type... linux
+checking for aarch64-linux-android-pkg-config... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.17.0... yes
+checking for brew... no
+checking for linux/wireless.h... yes
+checking for libnl-genl-3.0 with pkg-config... found
+checking for struct tpacket_auxdata.tp_vlan_tci... yes
+checking for getifaddrs... yes
+checking for ifaddrs.h... yes
+checking for linux/net_tstamp.h... yes
+checking for socklen_t... yes
+checking for dagapi.h... no
+checking whether we have Septel API headers... no
+checking whether we have Myricom Sniffer API... no
+checking whether TurboCap is supported... no
+checking whether to enable remote packet capture... no
+checking whether to build optimizer debugging code... no
+checking whether to build parser debugging code... no
+checking for aarch64-linux-android-ranlib... aarch64-linux-android24-ranlib
+checking for aarch64-linux-android-ar... aarch64-linux-android24-ar
+checking whether ln -s works... yes
+checking for struct sockaddr.sa_len... no
+checking for struct sockaddr_storage... yes
+checking for dl_hp_ppa_info_t.dl_module_id_1... no
+checking for Linux usbmon USB sniffing support... yes
+checking for linux/compiler.h... yes
+checking for linux/usbdevice_fs.h... yes
+checking for struct usbdevfs_ctrltransfer.bRequestType... yes
+checking whether we can compile the netfilter support... yes
+checking whether we can compile the netmap support... no
+checking for libdpdk with pkg-config... not found
+checking for bluetooth/bluetooth.h... no
+configure: Bluetooth sniffing is not supported; install bluez-lib devel to enable it
+checking for dbus-1 with pkg-config... found
+checking whether the D-Bus library defines dbus_connection_read_write... no
+checking for libibverbs with pkg-config... found
+checking for infiniband/verbs.h... no
+checking for a BSD-compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating grammar.y
+config.status: creating pcap-filter.manmisc
+config.status: creating pcap-linktype.manmisc
+config.status: creating pcap-tstamp.manmisc
+config.status: creating pcap-savefile.manfile
+config.status: creating pcap.3pcap
+config.status: creating pcap_compile.3pcap
+config.status: creating pcap_datalink.3pcap
+config.status: creating pcap_dump_open.3pcap
+config.status: creating pcap_get_tstamp_precision.3pcap
+config.status: creating pcap_list_datalinks.3pcap
+config.status: creating pcap_list_tstamp_types.3pcap
+config.status: creating pcap_open_dead.3pcap
+config.status: creating pcap_open_offline.3pcap
+config.status: creating pcap_set_immediate_mode.3pcap
+config.status: creating pcap_set_tstamp_precision.3pcap
+config.status: creating pcap_set_tstamp_type.3pcap
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing default-1 commands
+=== configuring in libpcre (/home/mostafizur/nmap-android/libpcre)
+configure: running /bin/sh ./configure --disable-option-checking '--prefix=/usr/local'  '--host=aarch64-linux-android' '--disable-zenmap' '--disable-nmap-update' 'host_alias=aarch64-linux-android' 'CC=aarch64-linux-android24-clang' 'CXX=aarch64-linux-android24-clang++' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for aarch64-linux-android-strip... /usr/bin/strip
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports nested variables... (cached) yes
+checking for aarch64-linux-android-gcc... aarch64-linux-android24-clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android24-clang accepts -g... yes
+checking for aarch64-linux-android24-clang option to enable C11 features... none needed
+checking whether aarch64-linux-android24-clang understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of aarch64-linux-android24-clang... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for aarch64-linux-android-ar... aarch64-linux-android24-ar
+checking the archiver (aarch64-linux-android24-ar) interface... unknown

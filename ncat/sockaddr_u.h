@@ -75,6 +75,12 @@
 #endif
 #if HAVE_SYS_UN_H
 # include <sys/un.h>
+/* SUN_LEN may not be defined on all platforms (e.g., Android) */
+# ifndef SUN_LEN
+#  include <string.h>
+#  include <stddef.h>
+#  define SUN_LEN(ptr) ((size_t)(offsetof(struct sockaddr_un, sun_path) + strlen((ptr)->sun_path) + 1))
+# endif
 #endif
 #if HAVE_LINUX_VM_SOCKETS_H
 #include <linux/vm_sockets.h>

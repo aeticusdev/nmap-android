@@ -75,6 +75,11 @@
 #include <sys/un.h>
 #include <string.h>
 
+/* SUN_LEN may not be defined on all platforms (e.g., Android) */
+#ifndef SUN_LEN
+#define SUN_LEN(ptr) ((size_t)(offsetof(struct sockaddr_un, sun_path) + strlen((ptr)->sun_path) + 1))
+#endif
+
 #define NCAT_INIT_SUN(_Sock, _Source) do { \
   memset(_Sock, 0, sizeof(union sockaddr_u)); \
   (_Sock)->un.sun_family = AF_UNIX; \

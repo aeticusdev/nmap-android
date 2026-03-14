@@ -537,18 +537,26 @@ static int ssl_gen_cert(X509 **cert, EVP_PKEY **key)
     if (rc < 0 || rc >= sizeof(dNSName))
         goto err;
     X509V3_set_ctx(&ctx, *cert, *cert, NULL, NULL, 0);
+#ifdef OPENSSL_IS_BORINGSSL
+    ext = X509V3_EXT_nconf_nid(NULL, &ctx, NID_subject_alt_name, dNSName);
+#else
     ext = X509V3_EXT_conf(NULL, &ctx, "subjectAltName", dNSName);
+#endif
     if (ext == NULL)
         goto err;
     if (X509_add_ext(*cert, ext, -1) == 0)
         goto err;
 
     /* Set a comment. */
+#ifdef OPENSSL_IS_BORINGSSL
+    /* BoringSSL doesn't support nsComment extension */
+#else
     ext = X509V3_EXT_conf(NULL, &ctx, "nsComment", CERTIFICATE_COMMENT);
     if (ext == NULL)
         goto err;
     if (X509_add_ext(*cert, ext, -1) == 0)
         goto err;
+#endif
 
 #if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined LIBRESSL_VERSION_NUMBER
     {
