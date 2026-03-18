@@ -3,7 +3,7 @@
 This is a fork of [Nmap](https://nmap.org/), cross-compiled and modified to run on Android devices (AArch64, Android API 24).
 
 ---
-            
+                                                                           
 ## About
 
 Nmap ("Network Mapper") is a powerful open-source tool for network discovery and security auditing. This fork adapts Nmap to Android using the official Android NDK toolchain.
